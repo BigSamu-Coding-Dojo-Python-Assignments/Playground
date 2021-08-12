@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 
-    <title>Playground</title>
+    <title>Checkboard</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="container">
-            <h1>Welcome</h1>
+            <h1>Checkboard</h1>
             <div class="boxContainer">
-                {% for i in range(0, num_times) %}
-                    <div class="box" style="background-color: {{color}}"></div>
+                {% for i in range(0, num_rows) %}
+                    {% for j in range(0, num_cols) %}
+                        <div class="box_1" style="background-color: {{color}}"></div>
+                        <div class="box_2" style="background-color: {{color}}"></div>
+                    {% endfor %}
                 {% endfor %}
             </div>
         </div>
